@@ -1,0 +1,41 @@
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class ContactTest {
+    
+    private Contact contact;
+
+    @BeforeEach
+    public void setUp() {
+        contact = new Contact("Ada Lovelace", "+1 617 555 0101");
+    } 
+  
+    @Test 
+    public void constructor_setsNameCorrectly() {
+        assertEquals("Ada Lovelace", contact.getName());
+    }
+
+    @Test 
+    public void constructor_setsPhoneNumberCorrectly(){
+        assertEquals("+1 617 555 0101", contact.getPhoneNumber());
+    }
+
+    @Test
+    public void getName_returnsExactString_notTransformed() { 
+        assertEquals("Ada Lovelace", contact.getName());
+    } 
+ 
+  @Test
+    public void toString_containsName() { 
+        assertTrue(contact.toString().contains("Ada Lovelace"));
+    }
+ 
+    @Test
+    public void toString_containsPhone() {
+        assertTrue(contact.toString().contains("+1 617 555 0101"));
+    }
+
+}
