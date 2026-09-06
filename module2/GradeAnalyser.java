@@ -67,7 +67,7 @@ public class GradeAnalyser {
         return scores;
     }
     
-    private static double calculateAverage(List<Integer> numberList){
+    public static double calculateAverage(List<Integer> numberList){
         double average = 0.0D;
         if(numberList != null && numberList.size() > 0) {
             double total =0.0D;

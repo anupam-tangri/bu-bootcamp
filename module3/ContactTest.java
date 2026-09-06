@@ -38,4 +38,14 @@ public class ContactTest {
         assertTrue(contact.toString().contains("+1 617 555 0101"));
     }
 
+    @Test
+    public void constructor_twoConstructorObjectsHaveThierOwnNameAndPhoneNumbers(){
+        Contact differentContact = new Contact("Different Name", "+1 444 555 6666");
+        assertEquals("Different Name", differentContact.getName());
+        assertEquals("+1 444 555 6666", differentContact.getPhoneNumber());
+
+        assertEquals("Ada Lovelace", contact.getName());
+        assertEquals("+1 617 555 0101", contact.getPhoneNumber());
+    }
+
 }
